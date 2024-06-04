@@ -7,13 +7,16 @@
     <link rel="stylesheet" href="./assets/css/normalize.css">
     <link rel="stylesheet" href="./assets/css/form.css">
 </head>
-<body>
+<body class="toggle-display mode-light" data-display_mode="light">
     <header>
         <nav>
-            <div><button type="button">🌞</button></div>
+            <div>
+                 <!-- Toggle light/dark mode -->
+                <button class="toggle-display mode-light" id="display-mode-toggle" type="button">🌞</button>
+            </div>
         </nav>
     </header>
-    <main>
+    <main class="toggle-display">
         <section>
             <div>
                 My First Blog
@@ -34,6 +37,7 @@
             </div>
         </section>
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./assets/javascript/form.js"></script>
 </body>
 </html>
