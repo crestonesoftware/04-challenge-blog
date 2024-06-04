@@ -1,3 +1,22 @@
-.verify {
-    color: green;
+:root {
+    --light-background: white;
+}
+
+* {
+    background-color: var(--light-background);
+}
+
+main, main div, main p, main input, main label, 
+footer, footer div, footer p, footer input, footer label {
+    border: solid red 1px;
+}
+header {
+    border-bottom: solid black 4px;
+    text-align: right;
+    margin-bottom: 3px;
+}
+
+header nav div button {
+    border: none;
+    background-color: var(--light-background);
 }
