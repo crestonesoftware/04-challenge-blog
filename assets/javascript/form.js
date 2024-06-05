@@ -3,11 +3,16 @@ const DISPLAY_MODE_LIGHT = "light";
 const DISPLAY_MODE_DARK = "dark";
 
 // DEPENDENCIES (ELEMENTS)
-const bodyEl = $('body');
-const sunButton = $('#display-mode-toggle');
+const bodyEl        = $('body');
+const sunButton     = $('#display-mode-toggle');
+const submitButton  = $('#form-submit');
+const usernameInput = $('#username-input');
+const titleInput    = $('#title-input');
+const contentInput  = $('#content-input');          
 
 // DATA
 let displayMode = DISPLAY_MODE_LIGHT;
+const blogEntries = [];
 // FUNCTIONS
 
 function handleSunButtonClick(event) {
@@ -28,4 +33,20 @@ function handleSunButtonClick(event) {
     }
 }
 
+function handleFormSubmit(event) {
+    console.log('handleFormSubmit');
+    if(!usernameInput.val() || !titleInput.val() || !contentInput.val()) {
+        alert("Username, Title, and Content are all required");
+        return;
+    }
+    const blogEntry = {
+        username: usernameInput.val(),
+        title: titleInput.val(),
+        content: contentInput.val()
+    }
+    blogEntries.push(blogEntry);
+    localStorage.setItem('blogEntries',JSON.stringify(blogEntries));
+}
+
 sunButton.on('click', handleSunButtonClick);
+submitButton.on('click', handleFormSubmit);
