@@ -3,16 +3,19 @@ const DISPLAY_MODE_LIGHT = "light";
 const DISPLAY_MODE_DARK = "dark";
 
 // DEPENDENCIES (ELEMENTS)
-const bodyEl = $('body');
-const sunButton = $('#display-mode-toggle');
+const bodyEl        = $('body');
+const sunButton     = $('#display-mode-toggle');
+const submitButton  = $('#form-submit');
+const usernameInput = $('#username-input');
+const titleInput    = $('#title-input');
+const contentInput  = $('#content-input');          
 
 // DATA
-
+let displayMode = DISPLAY_MODE_LIGHT;
+const blogEntries = [];
 // FUNCTIONS
 
 function handleSunButtonClick(event) {
-    // <body> stores the display mode
-    const displayMode = bodyEl.data('display_mode');
     // get all elements marked with the class .toggle-display. They include
     // - the body 
     // - any element that doesn't inherit its color and background color 
@@ -20,14 +23,30 @@ function handleSunButtonClick(event) {
     const toggleElements = $('.toggle-display');
 
     if (DISPLAY_MODE_DARK == displayMode) {
-        bodyEl.data('display_mode','light'); // toggle the attribute on <body>
+        displayMode = DISPLAY_MODE_LIGHT; // toggle the attribute on <body>
         // swap light and dark classes
         toggleElements.addClass('mode-light').removeClass('mode-dark');
     } else {
-        bodyEl.data('display_mode','dark'); // toggle the attribute on <body>
+        displayMode = DISPLAY_MODE_DARK; // toggle the attribute on <body>
         // swap light and dark classes
         toggleElements.addClass('mode-dark').removeClass('mode-light');
     }
 }
 
+function handleFormSubmit(event) {
+    console.log('handleFormSubmit');
+    if(!usernameInput.val() || !titleInput.val() || !contentInput.val()) {
+        alert("Username, Title, and Content are all required");
+        return;
+    }
+    const blogEntry = {
+        username: usernameInput.val(),
+        title: titleInput.val(),
+        content: contentInput.val()
+    }
+    blogEntries.push(blogEntry);
+    localStorage.setItem('blogEntries',JSON.stringify(blogEntries));
+}
+
 sunButton.on('click', handleSunButtonClick);
+submitButton.on('click', handleFormSubmit);
