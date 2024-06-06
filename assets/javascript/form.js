@@ -34,6 +34,8 @@ function handleSunButtonClick(event) {
 }
 
 function handleFormSubmit(event) {
+    event.preventDefault();
+    
     console.log('handleFormSubmit');
     if(!usernameInput.val() || !titleInput.val() || !contentInput.val()) {
         alert("Username, Title, and Content are all required");
@@ -46,6 +48,8 @@ function handleFormSubmit(event) {
     }
     blogEntries.push(blogEntry);
     localStorage.setItem('blogEntries',JSON.stringify(blogEntries));
+    window.location.href = "./blog.html";
+
 }
 
 sunButton.on('click', handleSunButtonClick);
