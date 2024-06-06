@@ -21,27 +21,23 @@
     <main>
         <section>
             <div class="container ">
-                <!--?? the gx-50 setting seems to have no effect -->
-                 <div class="row align-items-center gx-50"> 
-                    <!-- setting border right on this div produces a border spanning the entire height of main -->
-                    <div class="col-12 col-md-6 landing-main-left">
+                 <div class="row"> 
+                    <div class="col-12 col-md-4 mx-1 landing-main-left">
                         <div class="left-label-circle">
                             <p class="landing-page-label">My First Blog</p>
                         </div>
                     </div>
-                    <!-- setting border left on this div produces a border spanning less than the
-                         height of main. Why?? -->
-                    <div class="col-12 col-md-6 landing-main-right">
-                        <div class="col-12 col-md-6 align-items-center">
+                    <div class="col-12 col-md-6 d-flex align-items-center jutify-content-center landing-main-right">
+                        <form class="w-100">
                             <p>What's on your mind?</p>
-                            <div><label for="username-input">Username</label></div>
-                            <div><input type="text" id="username-input" placeholder=""></div>
-                            <div><label for="title-input">Title</label></div>
-                            <div><input type="text" id="title-input"></div>
-                            <div><label for="content-input">Content</label></div>
-                            <div><textarea name="Content" id="content-input"></textarea></div>
-                            <div><button type="submit" id="form-submit">Submit</button></div>
-                        </div>
+                            <label for="username-input">Username</label><br>
+                            <input width="100%" type="text" id="username-input" placeholder="enter username" class="my-1 w-100">
+                            <label for="title-input">Title</label><br>
+                            <input type="text" id="title-input" class="w-100 my-1"><br>
+                            <label for="content-input">Content</label><br>
+                            <textarea name="Content" id="content-input" class="w-100 my-1"></textarea><br>
+                            <button type="submit" id="form-submit" class="w-100 mt-1">Submit</button>
+                        </form>
                     </div>
                 </div>
             </div>

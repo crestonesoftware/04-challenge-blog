@@ -72,7 +72,9 @@ main {
 
 .left-label-circle {
     border-radius: 50%;
-    background-color: salmon;
+    
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(121,76,9,1) 39%, rgba(255,243,0,1) 100%);
     height: 300px;
 }
 
@@ -88,12 +90,13 @@ main {
 .landing-main-right {
     border-left: none;
     /* height: 100%; */
-    height: 300px; /* this works to force the height to meet the border above. 
+    /* height: 300px; */
+     /* this works to force the height to meet the border above. 
                       Why doesn't height 100% work?? */
     /* margin-left: 1px; setting any margin here moves the div to move to the
                          next row down, under the orange circle. Why?? */
 }
-@media (min-width: 576px) {
+@media (min-width: 768px) {
     .landing-main-left {
         padding-top: 54px;
         padding-bottom: 54px;
@@ -106,7 +109,8 @@ main {
     .landing-main-right {
         border-left: solid 4px var(--very-dark);
         /* height: 100%; */
-        height: 300px; /* this works to force the height to meet the border above. 
+        /* height: 300px;  */
+        /* this works to force the height to meet the border above. 
                           Why doesn't height 100% work?? */
 
     }
