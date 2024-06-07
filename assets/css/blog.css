@@ -6,8 +6,10 @@
 body {
     border: solid 2px;
     border-radius: 5px;
-    padding: 6px
+}
 
+h4 {
+    font-size: 100%;
 }
 
 /* ************** */
@@ -29,7 +31,7 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-    border-bottom: solid 4px;
+    border-bottom: solid 3px;
     margin-bottom: 3px;
 }
 
@@ -55,4 +57,32 @@ header nav div a {
     border-radius: 4px;
     text-decoration: none;
     font-weight: 500;
+}
+
+/* body styles */
+main {
+    border-top: 3px solid;
+    border-bottom: 3px solid;
+    margin-bottom: 4px;
+}
+
+.blog-entry {
+    border: 2px solid;
+    border-radius: 3px;
+    margin: 6px;
+    padding: 3px;
+}
+
+/* footer styles */
+footer {
+    border-top: 3px solid;
+}
+
+.blog-content {
+    font-style: italic;
+}
+
+.blog-username {
+    font-size: 80%;
+    color: gray;
 }
