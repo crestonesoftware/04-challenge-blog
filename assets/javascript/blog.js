@@ -1,14 +1,3 @@
-// ENUMS
-const DISPLAY_MODE_LIGHT = "light";
-const DISPLAY_MODE_DARK = "dark";
-
-// DEPENDENCIES (ELEMENTS)
-const bodyEl        = $('body');
-const sunButton     = $('#display-mode-toggle');
-
-// DATA
-let displayMode = DISPLAY_MODE_LIGHT;
-
 // FUNCTIONS
 function loadBlogEntries() {
     console.log("this happened on load");
