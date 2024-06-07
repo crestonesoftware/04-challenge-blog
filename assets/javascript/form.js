@@ -12,7 +12,9 @@ const contentInput  = $('#content-input');
 
 // DATA
 let displayMode = DISPLAY_MODE_LIGHT;
-const blogEntries = [];
+//const blogEntries = [];
+const ENTRIES_IN_LOCAL_STORAGE = "blogEntries";
+
 // FUNCTIONS
 
 function handleSunButtonClick(event) {
@@ -46,10 +48,11 @@ function handleFormSubmit(event) {
         title: titleInput.val(),
         content: contentInput.val()
     }
+    
+    const blogEntries = JSON.parse(localStorage.getItem(ENTRIES_IN_LOCAL_STORAGE));
+    console.log(blogEntries);
     blogEntries.push(blogEntry);
-    localStorage.setItem('blogEntries',JSON.stringify(blogEntries));
-    window.location.href = "./blog.html";
-
+    localStorage.setItem(ENTRIES_IN_LOCAL_STORAGE,JSON.stringify(blogEntries));
 }
 
 sunButton.on('click', handleSunButtonClick);

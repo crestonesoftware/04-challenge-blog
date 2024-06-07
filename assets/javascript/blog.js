@@ -10,8 +10,11 @@ const sunButton     = $('#display-mode-toggle');
 let displayMode = DISPLAY_MODE_LIGHT;
 
 // FUNCTIONS
+function loadBlogEntries() {
+    console.log("this happened on load");
+}
 
-
+// USER INTERACTIONS
 function handleSunButtonClick(event) {
     console.log('asdsad');
     // get all elements marked with the class .toggle-display. They include
@@ -31,3 +34,4 @@ function handleSunButtonClick(event) {
     }
 }
 sunButton.on('click', handleSunButtonClick);
+loadBlogEntries();
