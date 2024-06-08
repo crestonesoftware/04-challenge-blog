@@ -76,12 +76,6 @@ main {
     margin: 6px;
     padding: 3px;
 }
-
-/* footer styles */
-footer {
-    border-top: 3px solid;
-}
-
 .blog-content {
     font-style: italic;
     margin-left: 10px;
@@ -91,4 +85,27 @@ footer {
     font-size: 80%;
     color: gray;
 }
+.blog-entry-horizontal-line {
+    background: black;
+    height: 1px;
+}
 
+/* footer styles */
+footer {
+    border-top: 3px solid;
+    font-size: 80%;
+    padding: 20px;
+}
+
+.made-by {
+    display: flex;
+    justify-content: center;
+}
+
+.credits {
+    font-style: italic;
+}
+
+footer div span {
+    font-weight: 500;
+}

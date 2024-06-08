@@ -38,12 +38,12 @@ function handleSunButtonClick(event) {
 function handleFormSubmit(event) {
     event.preventDefault();
     
-    console.log('handleFormSubmit');
     if(!usernameInput.val() || !titleInput.val() || !contentInput.val()) {
         alert("Username, Title, and Content are all required");
         return;
     }
     COMMON.addBlogEntry(usernameInput.val(), titleInput.val(), contentInput.val());
+    location.href = 'blog.html';
 }
 
 sunButton.on('click', handleSunButtonClick);

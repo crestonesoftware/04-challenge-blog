@@ -18,7 +18,7 @@ function composeBlogEntryElement(entry) {
     const newEntryElement = $(`
     <div class="blog-entry">
         <h4>${entry.title}</h4>
-        <div></div>
+        <div class="blog-entry-horizontal-line"></div>
         <p class="blog-content mb-half-em">${entry.content}</p>
         <p class="blog-username mb-half-em">Posted by: <span>${entry.username}</span></p>
     </div>
