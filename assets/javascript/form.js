@@ -1,20 +1,22 @@
-// ENUMS
-const DISPLAY_MODE_LIGHT = "light";
-const DISPLAY_MODE_DARK = "dark";
-
 // DEPENDENCIES (ELEMENTS)
-const bodyEl        = $('body');
-const sunButton     = $('#display-mode-toggle');
 const submitButton  = $('#form-submit');
 const usernameInput = $('#username-input');
 const titleInput    = $('#title-input');
 const contentInput  = $('#content-input');          
 
 // DATA
-let displayMode = DISPLAY_MODE_LIGHT;
-const blogEntries = [];
-// FUNCTIONS
 
+// TEST ONLY - REMOVE BEFORE RELEASE. 
+function testData_blogForm() {
+    usernameInput.val("Alistair McKenzie");
+    titleInput.val('A solid blogging');
+    contentInput.val('Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium excepturi fugit illum explicabo id rem, quam ipsa quas nesciunt quidem nobis laboriosam iusto ad eius! Facere animi ex adipisci veniam!');
+    
+}
+// TEST - REMOVE BEFORE RELEASE
+testData_blogForm();
+
+// FUNCTIONS
 function handleSunButtonClick(event) {
     // get all elements marked with the class .toggle-display. They include
     // - the body 
@@ -22,12 +24,12 @@ function handleSunButtonClick(event) {
     //   from the body, e.g. the button
     const toggleElements = $('.toggle-display');
 
-    if (DISPLAY_MODE_DARK == displayMode) {
-        displayMode = DISPLAY_MODE_LIGHT; // toggle the attribute on <body>
+    if (COMMON.DISPLAY_MODE_DARK == displayMode) {
+        displayMode = COMMON.DISPLAY_MODE_LIGHT; // toggle the attribute on <body>
         // swap light and dark classes
         toggleElements.addClass('mode-light').removeClass('mode-dark');
     } else {
-        displayMode = DISPLAY_MODE_DARK; // toggle the attribute on <body>
+        displayMode = COMMON.DISPLAY_MODE_DARK; // toggle the attribute on <body>
         // swap light and dark classes
         toggleElements.addClass('mode-dark').removeClass('mode-light');
     }
@@ -36,20 +38,12 @@ function handleSunButtonClick(event) {
 function handleFormSubmit(event) {
     event.preventDefault();
     
-    console.log('handleFormSubmit');
     if(!usernameInput.val() || !titleInput.val() || !contentInput.val()) {
         alert("Username, Title, and Content are all required");
         return;
     }
-    const blogEntry = {
-        username: usernameInput.val(),
-        title: titleInput.val(),
-        content: contentInput.val()
-    }
-    blogEntries.push(blogEntry);
-    localStorage.setItem('blogEntries',JSON.stringify(blogEntries));
-    window.location.href = "./blog.html";
-
+    COMMON.addBlogEntry(usernameInput.val(), titleInput.val(), contentInput.val());
+    location.href = 'blog.html';
 }
 
 sunButton.on('click', handleSunButtonClick);
