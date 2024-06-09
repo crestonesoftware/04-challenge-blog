@@ -110,3 +110,8 @@ footer {
 footer div span {
     font-weight: 500;
 }
+
+.credits a {
+    color: var(--very-dark);
+    
+}
