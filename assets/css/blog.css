@@ -76,6 +76,7 @@ main {
     margin: 6px;
     padding: 3px;
 }
+
 .blog-content {
     font-style: italic;
     margin-left: 10px;
@@ -89,7 +90,7 @@ main {
     background: black;
     height: 1px;
 }
-
+/* ************* */
 /* footer styles */
 footer {
     border-top: 3px solid;
