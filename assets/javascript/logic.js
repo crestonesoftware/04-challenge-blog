@@ -1,14 +1,12 @@
-// ENUMS
-// const DISPLAY_MODE_LIGHT = "light";
-// const DISPLAY_MODE_DARK = "dark";
-
 // DEPENDENCIES (ELEMENTS)
 const bodyEl        = $('body');
 const sunButton     = $('#display-mode-toggle');
 
 // DATA
-// let displayMode = COMMON.DISPLAY_MODE_LIGHT;
+// initialized after defining COMMON
+// let displayMode;
 
+// FUNCTIONS AND ENUMS
 const COMMON = {
     DISPLAY_MODE_LIGHT: "light",
     DISPLAY_MODE_DARK: "dark",
@@ -38,6 +36,13 @@ const COMMON = {
         //   from the body, e.g. the button
         const toggleElements = $('.toggle-display');
     
+        let displayMode = localStorage.getItem('displayMode');
+        console.log(`displayMode is ${displayMode}`);
+        if (!displayMode) {
+            displayMode = COMMON.DISPLAY_MODE_LIGHT;
+            console.log(`wasn't initialized so now it's light`);
+        }
+
         if (COMMON.DISPLAY_MODE_DARK == displayMode) {
             displayMode = COMMON.DISPLAY_MODE_LIGHT; // toggle the attribute on <body>
             // swap light and dark classes
@@ -47,7 +52,24 @@ const COMMON = {
             // swap light and dark classes
             toggleElements.addClass('mode-dark').removeClass('mode-light');
         }
+        localStorage.setItem('displayMode', displayMode);
+
     }
 }
 
-let displayMode = COMMON.DISPLAY_MODE_LIGHT;
+function fetchDisplayMode() {
+    let displayMode = localStorage.getItem('displayMode');
+    const toggleElements = $('.toggle-display');
+    // not yet initialized - default to light mode
+    if (!displayMode) {
+        displayMode = COMMON.DISPLAY_MODE_LIGHT;
+    }
+    // set classes for the current mode. Adding and removal of classes is the opposite of the toggling done in 
+    // handleSunButtonClick
+    if (COMMON.DISPLAY_MODE_LIGHT === displayMode)
+        toggleElements.addClass('mode-light').removeClass('mode-dark');
+    else 
+        toggleElements.addClass('mode-dark').removeClass('mode-light');
+}
+
+fetchDisplayMode();
