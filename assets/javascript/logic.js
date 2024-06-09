@@ -18,8 +18,6 @@ const COMMON = {
         const blogEntries = JSON.parse(localStorage.getItem(this.ENTRIES_IN_LOCAL_STORAGE));
         if (!blogEntries)
             return [];
-        console.log(blogEntries);
-        console.log(`blogEntries length ${blogEntries.length}`);
         return blogEntries;
     },
     addBlogEntry: function(pUsername, pTitle, pContent) {

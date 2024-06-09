@@ -3,7 +3,6 @@ const blogEntryContainer = $('#blog-entry-container');
 
 // FUNCTIONS
 function loadBlogEntries() {
-    console.log("this happened on load");
     const blogEntries = COMMON.fetchBLogEntries();
     for (const entry of blogEntries) {
         const blogEntryElement = composeBlogEntryElement(entry);
