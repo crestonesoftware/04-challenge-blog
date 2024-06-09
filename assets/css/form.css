@@ -7,14 +7,6 @@ body {
     border: solid 2px;
     border-radius: 5px;
     padding: 6px
-
-}
-
-/* ******************* */
-/* temp styles for dev */
-main, main div, main p, main input, main label, 
-footer, footer div, footer p, footer input, footer label {
-    /* border: solid red 1px; */
 }
 
 /* ************** */
@@ -31,9 +23,8 @@ footer, footer div, footer p, footer input, footer label {
     border-color: var(--light);
 }
 
-
 /* ******************* */
-/* header styles */
+/*    header styles    */
 header {
     border-bottom: solid 4px;
     margin-bottom: 3px;
@@ -57,7 +48,7 @@ header nav div button {
 }
 
 /* ******************* */
-/* main styles         */
+/*     main styles     */
 main {
     border-top: solid 4px;
 }
@@ -89,8 +80,8 @@ main {
 }
 @media (min-width: 768px) {
     .landing-main-left {
-        padding-top: 54px;
-        padding-bottom: 54px;
+        /* padding-top: 54px;
+        padding-bottom: 54px; */
         border-right: solid 4px;
     }
 
@@ -98,6 +89,3 @@ main {
         border-left: solid 4px;
     }
 }
-
-
-
